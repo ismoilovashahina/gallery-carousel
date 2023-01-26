@@ -20,16 +20,25 @@ class MainActivity : AppCompatActivity() {
         imgArray.add(R.drawable.pic4)
         imgArray.add(R.drawable.pic5)
 
-        pic1.setOnClickListener {
-            if (index<imgArray.size){
-                pic1.setImageResource(imgArray[index++])
+        prev.setOnClickListener {
+            if (index > 0){
+                index--
             }
             else{
-                index=0
-                pic1.setImageResource(imgArray[index++])
+                index = imgArray.size-1
             }
+            pic1.setImageResource(imgArray[index])
         }
 
+        next.setOnClickListener {
+            if (index < imgArray.size-1){
+                index++
+            }
+            else{
+                index = 0
+            }
+            pic1.setImageResource(imgArray[index])
+        }
 
     }
 }
