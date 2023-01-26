@@ -2,7 +2,7 @@ package uz.itschool.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -40,5 +40,14 @@ class MainActivity : AppCompatActivity() {
             pic1.setImageResource(imgArray[index])
         }
 
+        button.setOnClickListener{
+            pic1.visibility = View.VISIBLE
+        }
+        button2.setOnClickListener {
+            pic1.visibility = View.GONE
+        }
+        button3.setOnClickListener {
+            pic1.visibility = View.INVISIBLE
+        }
     }
 }
